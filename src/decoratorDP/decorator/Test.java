@@ -11,7 +11,7 @@ public class Test {
         System.out.println(boisson.getDescription());
         System.out.println(boisson.cout());
 
-        boisson = new Chocolat(boisson);
+        boisson = new Chocolat(new Caramel(new Chocolat(boisson)));
         System.out.println(boisson.getDescription());
         System.out.println(boisson.cout());
     }

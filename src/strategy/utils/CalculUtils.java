@@ -2,7 +2,7 @@ package strategy.utils;
 
 
 public class CalculUtils {
-    public static float getSalaireBrutAnnuel(float salaireBrutMensuel) {
+    public static float calculateSalaireBrutAnnuel(float salaireBrutMensuel) {
         return salaireBrutMensuel * 12;
     }
 }

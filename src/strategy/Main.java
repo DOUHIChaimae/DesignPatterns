@@ -9,6 +9,7 @@ public class Main {
         IGRCalculator igrMarocCalculator = new MarocIGRCalculator();
         Employe employe = new Employe("emp1", 10000);
         employe.setIgrCalculator(igrMarocCalculator);
-        employe.calculerIGR();
+        float igr = employe.calculerIGR();
+        employe.calculateSalaireNetMensuel(employe.getSalaireBrutMensuel(), igr);
     }
 }

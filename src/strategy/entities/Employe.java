@@ -1,8 +1,9 @@
 package strategy.entities;
 
 import strategy.services.IGRCalculator;
-import strategy.utils.CalculUtils;
 import strategy.utils.ValidationUtils;
+
+import static strategy.utils.CalculUtils.calculateSalaireBrutAnnuel;
 
 public class Employe {
     private String cin;
@@ -16,21 +17,20 @@ public class Employe {
 
     public float calculerIGR() {
         ValidationUtils.validateSalaireBrutMensuel(salaireBrutMensuel);
-        var salaireBrutAnnuel = CalculUtils.getSalaireBrutAnnuel(salaireBrutMensuel);
+        var salaireBrutAnnuel = calculateSalaireBrutAnnuel(salaireBrutMensuel);
         return igrCalculator.calculateIGR(salaireBrutAnnuel);
     }
 
-    public float getSalaireNetMensuel() {
-        float igr = calculerIGR();
-        float salaireNetAnuel = salaireBrutMensuel * 12 - igr;
+    public float calculateSalaireNetMensuel(float salaireBrutMensuel, float igr) {
+        float salaireNetAnuel = calculateSalaireBrutAnnuel(salaireBrutMensuel) - igr;
         return salaireNetAnuel / 12;
-    }
-
-    public float getSalaireBrutMensuel() {
-        return salaireBrutMensuel;
     }
 
     public void setIgrCalculator(IGRCalculator igrCalculator) {
         this.igrCalculator = igrCalculator;
+    }
+
+    public float getSalaireBrutMensuel() {
+        return salaireBrutMensuel;
     }
 }

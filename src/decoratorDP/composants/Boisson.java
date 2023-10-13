@@ -1,4 +1,4 @@
-package decorator;
+package decoratorDP.composants;
 
 public abstract class Boisson {
     protected String description;

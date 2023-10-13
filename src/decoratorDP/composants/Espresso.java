@@ -1,4 +1,4 @@
-package decorator;
+package decoratorDP.composants;
 
 public class Espresso extends Boisson {
     public Espresso(){

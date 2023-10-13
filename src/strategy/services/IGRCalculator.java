@@ -1,5 +1,5 @@
 package strategy.services;
 
 public interface IGRCalculator {
-    float calculateIGR(float salaireBrutMensuel);
+    float calculateIGR(float salaireBrutAnuel);
 }

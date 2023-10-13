@@ -1,28 +1,17 @@
 package strategy.services.impl;
 
 
-import strategy.services.IGRService;
+import strategy.services.IGRCalculator;
 
-public class MarocIGRCalculator implements IGRService {
+public class MarocIGRCalculator implements IGRCalculator {
     @Override
-    public float calculateIGR(float salaireBrutMensuel) {
-        float salaireBrutAnnuel = getSalaireBrutAnnuel(salaireBrutMensuel);
-        if (salaireBrutAnnuel < 40000) {
-            return salaireBrutMensuel * 0.05f;
-        } else if (salaireBrutAnnuel > 40000 && salaireBrutAnnuel < 120000)
-            return salaireBrutMensuel * 0.02f;
-        else return salaireBrutMensuel * 0.04f;
-    }
-
-    @Override
-    public float getSalaireNetMensuel(float salaireBrutMensuel) {
-        var igr = calculateIGR(salaireBrutMensuel);
-        float salaireNetAnnuel = getSalaireBrutAnnuel(salaireBrutMensuel) - igr;
-        return salaireNetAnnuel / 12;
-    }
-
-    private static float getSalaireBrutAnnuel(float salaireBrutMensuel) {
-        float salaireBrutAnuel = salaireBrutMensuel * 12;
-        return salaireBrutAnuel;
+    public float calculateIGR(float salaireBrutAnuel) {
+        if (salaireBrutAnuel < 40000) {
+            return salaireBrutAnuel * 0.05f;
+        } else if (salaireBrutAnuel < 120000) {
+            return salaireBrutAnuel * 0.20f;
+        } else {
+            return salaireBrutAnuel * 0.42f;
+        }
     }
 }

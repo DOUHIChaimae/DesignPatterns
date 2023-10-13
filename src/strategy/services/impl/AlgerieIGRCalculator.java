@@ -1,26 +1,11 @@
 package strategy.services.impl;
 
-import strategy.services.IGRService;
+import strategy.services.IGRCalculator;
 
-public class AlgerieIGRCalculator implements IGRService {
-
-
-    @Override
-    public float calculateIGR(float salaireBrutMensuel) {
-        float salaireBrutAnnuel = getSalaireBrutAnnuel(salaireBrutMensuel);
-        return salaireBrutAnnuel * 0.35f;
-    }
+public class AlgerieIGRCalculator implements IGRCalculator {
 
     @Override
-    public float getSalaireNetMensuel(float salaireBrutMensuel) {
-        var igr = calculateIGR(salaireBrutMensuel);
-        float salaireNetAnnuel = getSalaireBrutAnnuel(salaireBrutMensuel) - igr;
-        return salaireNetAnnuel / 12;
-    }
-
-
-    private static float getSalaireBrutAnnuel(float salaireBrutMensuel) {
-        float salaireBrutAnuel = salaireBrutMensuel * 12;
-        return salaireBrutAnuel;
+    public float calculateIGR(float salaireBrutAnuel) {
+        return salaireBrutAnuel * 0.35f;
     }
 }

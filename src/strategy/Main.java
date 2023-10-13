@@ -1,15 +1,14 @@
 package strategy;
 
 import strategy.entities.Employe;
-import strategy.services.IGRService;
+import strategy.services.IGRCalculator;
 import strategy.services.impl.MarocIGRCalculator;
 
 public class Main {
     public static void main(String[] args) {
+        IGRCalculator igrMarocCalculator = new MarocIGRCalculator();
         Employe employe = new Employe("emp1", 10000);
-        IGRService igrMarocService = new MarocIGRCalculator();
-        igrMarocService.calculateIGR(employe.getSalaireBrutMensuel());
-        igrMarocService.getSalaireNetMensuel(employe.getSalaireBrutMensuel());
-
+        employe.setIgrCalculator(igrMarocCalculator);
+        employe.calculerIGR();
     }
 }

@@ -1,7 +1,7 @@
-package decoratorDP.decorator;
+package decorator.decoratorboisson;
 
-import decoratorDP.composants.Boisson;
-import decoratorDP.composants.Sumatra;
+import decorator.composants.Boisson;
+import decorator.composants.Sumatra;
 
 public class Test {
     public static void main(String[] args) {

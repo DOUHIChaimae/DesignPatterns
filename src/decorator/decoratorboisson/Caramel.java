@@ -1,6 +1,6 @@
-package decoratorDP.decorator;
+package decorator.decoratorboisson;
 
-import decoratorDP.composants.Boisson;
+import decorator.composants.Boisson;
 
 public class Caramel extends DecoratorBoisson {
     public Caramel(Boisson boisson) {

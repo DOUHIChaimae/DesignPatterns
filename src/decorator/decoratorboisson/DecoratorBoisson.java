@@ -1,6 +1,6 @@
-package decoratorDP.decorator;
+package decorator.decoratorboisson;
 
-import decoratorDP.composants.Boisson;
+import decorator.composants.Boisson;
 
 public abstract class DecoratorBoisson extends Boisson {
     protected Boisson boisson;

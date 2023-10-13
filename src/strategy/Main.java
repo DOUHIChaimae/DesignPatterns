@@ -1,8 +1,8 @@
-package Strategy;
+package strategy;
 
-import Strategy.entities.Employe;
-import Strategy.services.IGRService;
-import Strategy.services.impl.MarocIGRCalculator;
+import strategy.entities.Employe;
+import strategy.services.IGRService;
+import strategy.services.impl.MarocIGRCalculator;
 
 public class Main {
     public static void main(String[] args) {

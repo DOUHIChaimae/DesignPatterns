@@ -1,4 +1,4 @@
-package decoratorDP.composants;
+package decorator.composants;
 
 public class Deca extends Boisson {
     public Deca(){

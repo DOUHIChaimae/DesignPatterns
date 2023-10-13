@@ -1,4 +1,4 @@
-package Strategy.entities;
+package strategy.entities;
 
 public class Employe {
     private String cin;

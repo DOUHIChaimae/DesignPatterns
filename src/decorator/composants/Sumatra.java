@@ -1,4 +1,4 @@
-package decoratorDP.composants;
+package decorator.composants;
 
 public class Sumatra extends Boisson {
     public Sumatra(){

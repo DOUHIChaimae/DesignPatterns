@@ -1,4 +1,4 @@
-package Strategy.services;
+package strategy.services;
 
 public interface IGRService {
     float calculateIGR(float salaireBrutMensuel);

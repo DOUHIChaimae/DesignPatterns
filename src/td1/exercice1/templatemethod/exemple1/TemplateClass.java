@@ -1,4 +1,4 @@
-package td1.exercice1.templatemethod;
+package td1.exercice1.templatemethod.exemple1;
 
 public abstract class TemplateClass {
     public double getSum(int a, int b) {

@@ -6,16 +6,16 @@ package td1.exercice1.templatemethod;
  */
 
 public abstract class TemplateClass {
-    public double getSum(int a, int b) {
+    public double calculateResult(int x, int y) {
         double comp = 0;
-        double v1 = step1(a, b);
-        double v2 = step2(a, b);
+        double result1 = customStep1(x, y);
+        double result2 = customStep2(x, y);
         comp++;
-        return comp * (v1 + v2);
+        return comp * (result1 + result2);
     }
 
-    protected abstract double step1(int a, int b);
+    protected abstract double customStep1(int a, int b);
 
-    protected abstract double step2(int a, int b);
+    protected abstract double customStep2(int a, int b);
 
 }

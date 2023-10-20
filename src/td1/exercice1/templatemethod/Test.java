@@ -1,4 +1,4 @@
-package td1.exercice1.templatemethod.exemple1;
+package td1.exercice1.templatemethod;
 
 public class Test {
     public static void main(String[] args) {

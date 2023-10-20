@@ -1,14 +1,14 @@
 package td1.exercice1.decorator;
 
-public class Decorator implements Composant {
-    protected Composant composant;
+public class Decorator implements Component {
+    protected Component component;
 
-    public Decorator(Composant composant) {
-        this.composant = composant;
+    public Decorator(Component component) {
+        this.component = component;
     }
 
     @Override
     public void traitement() {
-        composant.traitement();
+        component.traitement();
     }
 }

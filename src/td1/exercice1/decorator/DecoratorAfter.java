@@ -7,7 +7,6 @@ public class DecoratorAfter extends Decorator {
 
     @Override
     public void traitement() {
-        super.traitement();
         System.out.println("Additional behavior after the processing");
     }
 }

@@ -8,6 +8,5 @@ public class DecoratorBefore extends Decorator {
     @Override
     public void traitement() {
         System.out.println("Additional behavior before the processing");
-        super.traitement();
     }
 }

@@ -11,7 +11,7 @@ public class Camera implements Observer {
 
     private static void displayUpdatedScore(int score) {
         System.out.println("** Camera **");
-        System.out.println("Player's score has changed: " + score);
+        System.out.println("Player's score has changed to: " + score);
     }
 
     private double calculateResult(int score) {

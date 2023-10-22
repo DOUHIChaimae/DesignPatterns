@@ -18,7 +18,7 @@ public class Gardien implements Observer {
 
     private static void displayUpdatedScore(int score) {
         System.out.println("** Gradien **");
-        System.out.println("Player's score has changed: " + score);
+        System.out.println("Player's score has changed to: " + score);
     }
 
     private void triggerSecurityAlert(String message) {

@@ -1,4 +1,4 @@
-package td1.exercice1.decorator;
+package td1.exercice1.q3decorator;
 
 public abstract class Decorator extends Component {
     protected Component component;

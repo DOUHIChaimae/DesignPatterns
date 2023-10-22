@@ -1,4 +1,4 @@
-package td1.exercice1.composite;
+package td1.exercice1.q1composite;
 
 public class Rectangle extends Figure {
     private double largeur;

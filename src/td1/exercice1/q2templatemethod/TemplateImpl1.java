@@ -1,4 +1,4 @@
-package td1.exercice1.templatemethod;
+package td1.exercice1.q2templatemethod;
 
 public class TemplateImpl1 extends TemplateClass {
     @Override

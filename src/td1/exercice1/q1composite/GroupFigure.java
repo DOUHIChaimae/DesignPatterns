@@ -1,4 +1,4 @@
-package td1.exercice1.composite;
+package td1.exercice1.q1composite;
 
 import java.util.ArrayList;
 import java.util.List;

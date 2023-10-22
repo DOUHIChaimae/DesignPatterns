@@ -1,4 +1,4 @@
-package td1.exercice1.decorator;
+package td1.exercice1.q3decorator;
 
 public class Main {
     public static void main(String[] args) {

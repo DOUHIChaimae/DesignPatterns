@@ -1,4 +1,4 @@
-package td1.exercice1.templatemethod;
+package td1.exercice1.q2templatemethod;
 
 /**
  * Template Method is a behavioral design pattern that defines the skeleton of an algorithm in the superclass

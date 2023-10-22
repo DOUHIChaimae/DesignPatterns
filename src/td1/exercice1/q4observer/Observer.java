@@ -1,4 +1,4 @@
-package td1.exercice1.observer;
+package td1.exercice1.q4observer;
 
 /**
  * Pattern Observer :  Définit une relation entre les objets de type un à plusieurs,de façon que, lorsqu'un

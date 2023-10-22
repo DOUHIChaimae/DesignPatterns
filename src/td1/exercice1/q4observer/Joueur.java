@@ -1,8 +1,7 @@
-package td1.exercice1.observer;
+package td1.exercice1.q4observer;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Joueur implements Observable {
     private int score;

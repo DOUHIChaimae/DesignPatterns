@@ -1,4 +1,4 @@
-package td1.exercice1.observer;
+package td1.exercice1.q4observer;
 
 public class Couloir implements Observer {
     @Override

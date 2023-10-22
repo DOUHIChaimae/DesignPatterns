@@ -16,7 +16,7 @@ public abstract class Utility {
     }
 
 
-    public abstract double filtre1(String str);
+    protected abstract double filtre1(String str);
 
-    public abstract double filtre2(double number);
+    protected abstract double filtre2(double number);
 }

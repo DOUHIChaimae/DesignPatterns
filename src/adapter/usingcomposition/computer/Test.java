@@ -1,6 +1,7 @@
-package adapter.computer;
+package adapter.usingcomposition.computer;
 
-import adapter.adapters.HdmiVgaAdapterUsingComposition;
+import adapter.usingcomposition.adapters.HdmiVgaAdapterUsingComposition;
+import adapter.usingcomposition.adapters.HdmiVgaAdapterUsingInheritance;
 
 public class Test {
     public static void main(String[] args) {
@@ -10,10 +11,16 @@ public class Test {
         uniteCentrale.setVga(new VideoProjector());
         uniteCentrale.print("Hello");
 
+        //Using composition
         HdmiVgaAdapterUsingComposition hdmiVgaAdapterUsingComposition = new HdmiVgaAdapterUsingComposition();
         hdmiVgaAdapterUsingComposition.setHdmi(new TV());
         uniteCentrale.setVga(new HdmiVgaAdapterUsingComposition());
         hdmiVgaAdapterUsingComposition.print("HI");
+
+        //Using Inheritance
+        HdmiVgaAdapterUsingInheritance hdmiVgaAdapterUsingInheritance = new HdmiVgaAdapterUsingInheritance();
+        uniteCentrale.setVga(hdmiVgaAdapterUsingInheritance);
+        hdmiVgaAdapterUsingInheritance.print("HI");
 
         uniteCentrale.setVga(new SuperVP());
         uniteCentrale.print("DP");

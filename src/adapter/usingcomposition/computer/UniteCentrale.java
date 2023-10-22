@@ -1,4 +1,4 @@
-package adapter.computer;
+package adapter.usingcomposition.computer;
 
 public class UniteCentrale {
     private VGA vga;

@@ -4,8 +4,13 @@ public class Couloir implements Observer {
     @Override
     public void update(Observable observable) {
         int score = ((Joueur) observable).getScore();
-        System.out.println("Player's score has changed to: " + score);
+        displayUpdatedScore(score);
         handleScore(score);
+    }
+
+    private static void displayUpdatedScore(int score) {
+        System.out.println("** Couloir **");
+        System.out.println("Player's score has changed to: " + score);
     }
 
     private void handleScore(int score) {

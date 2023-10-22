@@ -7,6 +7,6 @@ public class File extends Component {
 
     @Override
     public void show() {
-        System.out.println(tab() + "File" + name);
+        System.out.println(tab() + "File : " + name);
     }
 }

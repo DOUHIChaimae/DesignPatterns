@@ -21,7 +21,7 @@ public class Folder extends Component {
 
     @Override
     public void show() {
-        System.out.println(tab() + "Folder" + name);
+        System.out.println(tab() + "Folder : " + name);
         for (Component child : childs) {
             child.show();
         }

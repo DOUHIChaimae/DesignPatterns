@@ -3,7 +3,7 @@ package td1.exercice1.q1composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GroupFigure extends Figure {
+public class Group extends Figure {
     public List<Figure> figures = new ArrayList<>();
 
     public void addFigure(Figure figure) {

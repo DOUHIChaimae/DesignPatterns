@@ -2,7 +2,7 @@ package composite;
 
 public abstract class Component {
     protected String name;
-    protected int level;
+    protected int level = 0;
 
     public Component(String name) {
         this.name = name;

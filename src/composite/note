@@ -1,0 +1,9 @@
+Patter composite
+- Catégorie :  Structure
+
+Objectifs :
+1. Organiser les objets en structure arborescente afin de représenter une hiérarchie
+2. Permettre à la partie cliente de manipuler un objet unique et un objet composé de la meme manière
+
+Résultat :
+- Isoler l'appartenance à un agrégat

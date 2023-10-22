@@ -6,5 +6,5 @@ package td1.exercice1.observer;
  */
 
 public interface Observer {
-    void update(int updatedScore);
+    void update(Observable observable); //Pop technique
 }

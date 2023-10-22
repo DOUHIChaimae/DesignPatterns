@@ -1,4 +1,4 @@
-package adapter.usingcomposition.computer;
+package adapter.computer;
 
 public class VideoProjector implements VGA{
     @Override

@@ -1,7 +1,7 @@
-package adapter.usingcomposition.computer;
+package adapter.computer;
 
-import adapter.usingcomposition.adapters.HdmiVgaAdapterUsingComposition;
-import adapter.usingcomposition.adapters.HdmiVgaAdapterUsingInheritance;
+import adapter.adapters.HdmiVgaAdapterUsingComposition;
+import adapter.adapters.HdmiVgaAdapterUsingInheritance;
 
 public class Test {
     public static void main(String[] args) {

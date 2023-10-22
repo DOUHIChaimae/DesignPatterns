@@ -1,7 +1,7 @@
-package adapter.usingcomposition.adapters;
+package adapter.adapters;
 
-import adapter.usingcomposition.computer.TV;
-import adapter.usingcomposition.computer.VGA;
+import adapter.computer.TV;
+import adapter.computer.VGA;
 
 public class HdmiVgaAdapterUsingInheritance extends TV implements VGA {
     @Override

@@ -1,7 +1,7 @@
-package adapter.usingcomposition.adapters;
+package adapter.adapters;
 
-import adapter.usingcomposition.computer.HDMI;
-import adapter.usingcomposition.computer.VGA;
+import adapter.computer.HDMI;
+import adapter.computer.VGA;
 
 public class HdmiVgaAdapterUsingComposition implements VGA {
     private HDMI hdmi;

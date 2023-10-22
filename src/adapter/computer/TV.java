@@ -1,4 +1,4 @@
-package adapter.usingcomposition.computer;
+package adapter.computer;
 
 public class TV implements HDMI {
     @Override

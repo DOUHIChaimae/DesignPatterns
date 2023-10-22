@@ -23,7 +23,9 @@ public class Joueur implements Observable {
 
     @Override
     public void notifyObservers() {
-
+        for (Observer observer : observers) {
+            observer.update(this);
+        }
     }
 
     public int getScore() {

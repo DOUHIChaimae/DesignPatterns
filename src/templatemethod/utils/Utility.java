@@ -1,6 +1,7 @@
 package templatemethod.utils;
 
 public abstract class Utility {
+
     //Squelette d'algos
     public double compute(String str) {
         int size = str.length();

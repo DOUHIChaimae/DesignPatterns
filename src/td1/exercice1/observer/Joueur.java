@@ -34,6 +34,7 @@ public class Joueur implements Observable {
 
     public void setScore(int score) {
         this.score = score;
+        this.notifyObservers();
     }
 
 }

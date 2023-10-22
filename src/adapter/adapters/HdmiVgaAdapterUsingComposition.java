@@ -3,7 +3,7 @@ package adapter.adapters;
 import adapter.computer.HDMI;
 import adapter.computer.VGA;
 
-public class HdmiVgaAdapter implements VGA {
+public class HdmiVgaAdapterUsingComposition implements VGA {
     private HDMI hdmi;
 
     @Override

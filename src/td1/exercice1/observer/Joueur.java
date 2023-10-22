@@ -2,6 +2,7 @@ package td1.exercice1.observer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Joueur {
     private int score;
@@ -16,7 +17,7 @@ public class Joueur {
         observers.add(observer);
     }
 
-    public void removeObserver(Observer observer){
+    public void removeObserver(Observer observer) {
         observers.remove(observer);
     }
 

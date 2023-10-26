@@ -1,11 +1,11 @@
 package td1.exercice2.compression.templateMethod;
 
-public class CustomImageCompressionAlgorithm1 extends ImageCompressionAlgorithm {
+public class CustomImageCompressionAlgorithm2 extends ImageCompressionAlgorithm {
     @Override
     protected int[] preprocess(int[] data) {
-        int[] preprocessedData = new int[data.length / 2];
-        for (int i = 0; i < data.length; i += 2) {
-            preprocessedData[i / 2] = data[i];
+        int[] preprocessedData = new int[data.length];
+        for (int i = 0; i < data.length; i++) {
+            preprocessedData[i] = data[i] - 1;
         }
         return preprocessedData;
     }
@@ -14,7 +14,7 @@ public class CustomImageCompressionAlgorithm1 extends ImageCompressionAlgorithm 
     protected int[] performCompression(int[] data) {
         int[] compressedData = new int[data.length];
         for (int i = 0; i < data.length; i++) {
-            compressedData[i] = data[i] / 2;
+            compressedData[i] = data[i] / 3;
         }
         return compressedData;
     }
@@ -23,7 +23,7 @@ public class CustomImageCompressionAlgorithm1 extends ImageCompressionAlgorithm 
     protected int[] postprocess(int[] data) {
         int[] postprocessedData = new int[data.length];
         for (int i = 0; i < data.length; i++) {
-            postprocessedData[i] = data[i] + 20;
+            postprocessedData[i] = data[i] + 17;
         }
         return postprocessedData;
     }

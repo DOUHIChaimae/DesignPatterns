@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int[] image = new int[20];
+        int[] image = {1, 2, 3, 4};
 
         ImageFramework imageFramework = new ImageFramework(image);
 
@@ -28,10 +28,10 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Choisissez l'implémentation de filtrage (1, 2, 3 ) :");
-        int choixFiltrage = scanner.nextInt();
+        System.out.println("Choose the filtering implementation (1, 2, 3)");
+        int filteredImage = scanner.nextInt();
 
-        switch (choixFiltrage) {
+        switch (filteredImage) {
             case 1:
                 imageFramework.setFilterStrategy(filter1);
                 break;
@@ -45,11 +45,11 @@ public class Main {
                 break;
         }
 
-        System.out.println("\n___________________ image filtrée :_________________________\n");
+        System.out.println("\nFiltered image...\n");
         int[] imageFiltre = imageFramework.getFilterStrategy().filter(image);
         imageFramework.displayImage(imageFiltre);
 
-        System.out.println("Choisissez l'implémentation de compression (1, 2 ou autre pour par défaut) :");
+        System.out.println("Choose the compression implementation (1, 2 ) :");
         int choixCompression = scanner.nextInt();
 
         switch (choixCompression) {
@@ -63,9 +63,9 @@ public class Main {
                 break;
         }
 
-        System.out.println("\n___________________ image compressée :_________________________\n");
-        int[] imageCompressee = imageFramework.getImageCompressionAlgorithm().compress(image);
-        imageFramework.displayImage(imageCompressee);
+        System.out.println("\nCompressed image...\n");
+        int[] compressedImage = imageFramework.getImageCompressionAlgorithm().compress(image);
+        imageFramework.displayImage(compressedImage);
 
         scanner.close();
     }

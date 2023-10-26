@@ -14,8 +14,7 @@ public class ImageFramework {
     }
 
     public void displayImage(int[] image) {
-        System.out.println("\t\tAffichage de l'image : ");
-        System.out.println("\n\n");
+        System.out.println("\t\tDisplaying image... ");
         for (int i = 0; i < image.length; i++) {
             System.out.print(image[i] + " ");
         }

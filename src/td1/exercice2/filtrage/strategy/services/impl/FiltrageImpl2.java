@@ -5,6 +5,11 @@ import td1.exercice2.filtrage.strategy.services.FilterStrategy;
 public class FiltrageImpl2 implements FilterStrategy {
     @Override
     public int[] filter(int[] data) {
-        return new int[0];
+        int[] filteredData = new int[data.length];
+        for (int i = 0; i < data.length; i++) {
+            filteredData[i] = data[i] + 10;
+        }
+        System.out.println("** FiltrageImpl2 **");
+        return filteredData;
     }
 }

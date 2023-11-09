@@ -75,7 +75,7 @@ public class AvionImpl implements Avion {
 
         @Override
         public void atterir() {
-            System.out.println("impossible d'atterir depuis la piste"");
+            System.out.println("impossible d'atterir depuis la piste");
         }
 
         @Override
@@ -115,7 +115,9 @@ public class AvionImpl implements Avion {
 
         @Override
         public void doActivity() {
-            System.out.println("activité: au garage...");
+            for (int i = 0; i < 10; i++) {
+                System.out.println("activité: au garage...");
+            }
         }
     }
 
@@ -126,54 +128,30 @@ public class AvionImpl implements Avion {
 
         @Override
         public void sortirDuGarrage() {
-
+            System.out.println("impossible de sortir du garage depuis l'air");
         }
 
         @Override
         public void entrerAuGarrage() {
-
+            System.out.println("impossible d'entrer au garage depuis l'air");
         }
 
         @Override
         public void decoller() {
-
+            System.out.println("impossible de décoller je suis déjà en l'air");
         }
 
         @Override
         public void atterir() {
-
+            System.out.println("transition: en air -> piste");
+            avion.state = new EnPisteState(avion);
         }
 
         @Override
         public void doActivity() {
-
-        }
-    }
-
-    class State4 extends State {
-        @Override
-        public void sortirDuGarrage() {
-
-        }
-
-        @Override
-        public void entrerAuGarrage() {
-
-        }
-
-        @Override
-        public void decoller() {
-
-        }
-
-        @Override
-        public void atterir() {
-
-        }
-
-        @Override
-        public void doActivity() {
-
+            for (int i = 0; i < 10; i++) {
+                System.out.println("activité: en air...");
+            }
         }
     }
 }

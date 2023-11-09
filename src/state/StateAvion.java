@@ -1,13 +1,13 @@
 package state;
 
 public interface StateAvion {
-    void sortirDuGarrage();
+    void sortirDuGarrage(); //transition
 
-    void entrerAuGarrage();
+    void entrerAuGarrage(); //transition
 
-    void decoller();
+    void decoller(); //transition
 
-    void atterir();
+    void atterir(); //transition
 
-    void doActivity();
+    void doActivity(); // this method is used to simulate the activity of the plane
 }

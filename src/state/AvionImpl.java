@@ -4,7 +4,7 @@ public class AvionImpl implements Avion {
     private State state;
 
     public AvionImpl() {
-        state = new EnPisteState();
+        state = new EnPisteState(this);
     }
 
     @Override
@@ -34,6 +34,12 @@ public class AvionImpl implements Avion {
 
 
     abstract class State {
+        protected AvionImpl avion;
+
+        public State(AvionImpl avion) {
+            this.avion = avion;
+        }
+
         public abstract void sortirDuGarrage();
 
         public abstract void entrerAuGarrage();
@@ -46,6 +52,10 @@ public class AvionImpl implements Avion {
     }
 
     class EnPisteState extends State {
+        public EnPisteState(AvionImpl avion) {
+            super(avion);
+        }
+
         @Override
         public void sortirDuGarrage() {
             System.out.println("Impossible de sortir du garage depuis la piste");
@@ -53,53 +63,67 @@ public class AvionImpl implements Avion {
 
         @Override
         public void entrerAuGarrage() {
-
+            System.out.println("transition: en pist -> au garage");
+            avion.state = new AuGarageState(avion);
         }
 
         @Override
         public void decoller() {
-
+            System.out.println("transition: en pist -> décoller");
+            avion.state = new EnAirState(avion);
         }
 
         @Override
         public void atterir() {
-
+            System.out.println("impossible d'atterir depuis la piste"");
         }
 
         @Override
         public void doActivity() {
-
+            for (int i = 0; i < 10; i++) {
+                System.out.println("activité: en piste...");
+            }
         }
     }
 
     class AuGarageState extends State {
+
+        public AuGarageState(AvionImpl avion) {
+            super(avion);
+        }
+
         @Override
         public void sortirDuGarrage() {
-            System.out.printf("Sortir du garage");
+            System.out.printf("Transition: au garage -> en piste");
+            avion.state = new EnPisteState(avion);
         }
 
         @Override
         public void entrerAuGarrage() {
-
+            System.out.println("je suis déjà au garage");
         }
 
         @Override
         public void decoller() {
-
+            System.out.println("impossible de décoller depuis le garage");
         }
 
         @Override
         public void atterir() {
-
+            System.out.println("impossible d'atterir depuis le garage");
         }
 
         @Override
         public void doActivity() {
-
+            System.out.println("activité: au garage...");
         }
     }
 
-    class State3 extends State {
+    class EnAirState extends State {
+        public EnAirState(AvionImpl avion) {
+            super(avion);
+        }
+
         @Override
         public void sortirDuGarrage() {
 

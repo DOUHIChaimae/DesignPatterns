@@ -1,6 +1,6 @@
 package state;
 
-public interface StateAvion {
+public interface Avion {
     void sortirDuGarrage(); //transition
 
     void entrerAuGarrage(); //transition

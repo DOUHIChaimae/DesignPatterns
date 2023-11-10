@@ -1,8 +1,9 @@
 package strategy;
 
-import strategy.entities.Employe;
-import strategy.services.IGRCalculator;
-import strategy.services.impl.MarocIGRCalculator;
+
+import strategy.exercice.entities.Employe;
+import strategy.exercice.services.IGRCalculator;
+import strategy.exercice.services.impl.MarocIGRCalculator;
 
 public class Test {
     public static void main(String[] args) {

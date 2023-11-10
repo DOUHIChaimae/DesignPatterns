@@ -1,6 +1,6 @@
 package ma.enset.model;
 
-public class BankAccount {
+public class BankAccount implements Cloneable {
     private Long accountId;
     private double balance;
     private String currency;
@@ -106,5 +106,10 @@ public class BankAccount {
             return this.bankAccount;
         }
 
+    }
+
+    @Override
+    public BankAccount clone() throws CloneNotSupportedException {
+        return (BankAccount) super.clone();
     }
 }

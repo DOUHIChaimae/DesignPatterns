@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, CloneNotSupportedException {
         BankAccount account = BankDirector.accountBuilder()
                 .accountId(1L)
                 .balance(1000)
@@ -53,7 +53,11 @@ public class Main {
                 .forEach(System.out::println);
 
 
-
+        System.out.println("using prototype pattern to create a new account");
+        BankAccount newAccount = accountRepository.findById(1L).get();
+        BankAccount newAccount2 = newAccount.clone();
+        System.out.println("newAccount: " + bankAccountJsonSerializer.toJson(newAccount));
+        System.out.println("newAccount2: " + bankAccountJsonSerializer.toJson(newAccount2));
 
     }
 }

@@ -1,9 +1,10 @@
-package AP9.repository;
+package ma.enset.repository;
 
-import AP9.model.AccountStatus;
-import AP9.model.AccountType;
-import AP9.model.BankAccount;
-import AP9.model.BankDirector;
+
+import ma.enset.model.AccountStatus;
+import ma.enset.model.AccountType;
+import ma.enset.model.BankAccount;
+import ma.enset.model.BankDirector;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,6 +13,17 @@ import java.util.Optional;
 import java.util.function.Predicate;
 
 public class AccountRepositoryImpl implements AccountRepository {
+
+    private static final AccountRepositoryImpl accountRepository;
+
+    static {
+        System.out.println("instantiation du singleton");
+        accountRepository = new AccountRepositoryImpl();
+    }
+
+    private AccountRepositoryImpl() {
+    }
+
     private Map<Long, BankAccount> accounts = new HashMap<>();
     private long accountCounter = 0;
 
@@ -65,5 +77,9 @@ public class AccountRepositoryImpl implements AccountRepository {
 
             save(account);
         }
+    }
+
+    public static AccountRepositoryImpl getInstance() {
+        return accountRepository;
     }
 }

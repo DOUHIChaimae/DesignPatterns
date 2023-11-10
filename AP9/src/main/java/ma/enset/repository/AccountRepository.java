@@ -1,6 +1,7 @@
-package AP9.repository;
+package ma.enset.repository;
 
-import AP9.model.BankAccount;
+
+import ma.enset.model.BankAccount;
 
 import java.util.List;
 import java.util.Optional;

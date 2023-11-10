@@ -29,9 +29,16 @@ public class AccountRepositoryImpl implements AccountRepository {
 
     @Override
     public BankAccount save(BankAccount account) {
-        Long accountId = ++accountCounter;
+        Long accountId;
+
+        synchronized (this) {
+            accountId = ++accountCounter; //critical zone
+        }
         account.setAccountId(accountId);
-        accounts.put(accountId, account);
+
+        synchronized (this) {
+            accounts.put(accountId, account);
+        }
         return account;
     }
 
@@ -77,9 +84,24 @@ public class AccountRepositoryImpl implements AccountRepository {
 
             save(account);
         }
+        System.out.println("----------------------------------");
+        System.out.println(Thread.currentThread().getName());
+        System.out.println("count: " + accountCounter);
+        System.out.println("size: " + accounts.values().size());
+        System.out.println("----------------------------------");
     }
 
-    public static AccountRepositoryImpl getInstance() {
+    public synchronized static AccountRepositoryImpl getInstance() {
         return accountRepository;
     }
+
+
+    /*public static AccountRepositoryImpl getInstance() {
+        if (accountRepository == null)
+            System.out.println("instantiation du singleton");
+            accountRepository = new AccountRepositoryImpl();
+            accountRepository.populateData();
+        return accountRepository;
+    }*/
+
 }

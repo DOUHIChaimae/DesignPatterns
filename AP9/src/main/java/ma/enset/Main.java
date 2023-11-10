@@ -8,11 +8,11 @@ import ma.enset.model.BankDirector;
 import ma.enset.repository.AccountRepositoryImpl;
 import ma.enset.utils.JsonSerializer;
 
+import java.io.IOException;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException {
         BankAccount account = BankDirector.accountBuilder()
                 .accountId(1L)
                 .balance(1000)
@@ -23,8 +23,14 @@ public class Main {
 
         JsonSerializer<BankAccount> bankAccountJsonSerializer = new JsonSerializer<>();
         AccountRepositoryImpl accountRepository = AccountRepositoryImpl.getInstance();
-        accountRepository.populateData();
+        for (int i = 0; i < 10; i++) {
+            new Thread(() -> {
+                accountRepository.populateData();
+            }).start();
+        }
 
+        System.out.print("Taper sur une touche pour continuer");
+        System.in.read();
 
         List<BankAccount> bankAccounts = accountRepository.findAll();
         System.out.println("Printing all accounts");
@@ -45,6 +51,8 @@ public class Main {
         searchAccounts.stream()
                 .map(bankAccountJsonSerializer::toJson)
                 .forEach(System.out::println);
+
+
 
 
     }

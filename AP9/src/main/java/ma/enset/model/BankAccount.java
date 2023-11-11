@@ -8,6 +8,8 @@ public class BankAccount implements Cloneable {
 
     private AccountStatus status;
 
+    private Customer customer;
+
 
     public BankAccount(Long accountId, double balance, String currency, AccountType type, AccountStatus status) {
         this.accountId = accountId;
@@ -60,6 +62,14 @@ public class BankAccount implements Cloneable {
     public BankAccount() {
     }
 
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
     @Override
     public String toString() {
         return "BankAccount{" +
@@ -68,9 +78,9 @@ public class BankAccount implements Cloneable {
                 ", currency='" + currency + '\'' +
                 ", type=" + type +
                 ", status=" + status +
+                ", customer=" + customer +
                 '}';
     }
-
 
     public static class AccountBuilder {
         private BankAccount bankAccount = new BankAccount();
@@ -110,6 +120,8 @@ public class BankAccount implements Cloneable {
 
     @Override
     public BankAccount clone() throws CloneNotSupportedException {
-        return (BankAccount) super.clone();
+        BankAccount bankAccount = (BankAccount) super.clone();
+        bankAccount.setCustomer(this.customer.clone());
+        return bankAccount;
     }
 }

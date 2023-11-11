@@ -1,10 +1,7 @@
 package ma.enset;
 
 
-import ma.enset.model.AccountStatus;
-import ma.enset.model.AccountType;
-import ma.enset.model.BankAccount;
-import ma.enset.model.BankDirector;
+import ma.enset.model.*;
 import ma.enset.repository.AccountRepositoryImpl;
 import ma.enset.utils.JsonSerializer;
 
@@ -13,13 +10,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
-        BankAccount account = BankDirector.accountBuilder()
-                .accountId(1L)
-                .balance(1000)
-                .currency("USD")
-                .type(AccountType.CURRENT_ACCOUNT)
-                .status(AccountStatus.SUSPENDED)
-                .build();
 
         JsonSerializer<BankAccount> bankAccountJsonSerializer = new JsonSerializer<>();
         AccountRepositoryImpl accountRepository = AccountRepositoryImpl.getInstance();
@@ -55,9 +45,29 @@ public class Main {
 
         System.out.println("using prototype pattern to create a new account");
         BankAccount newAccount = accountRepository.findById(1L).get();
+        newAccount.setCustomer(new Customer(1L, "douhi3"));
         BankAccount newAccount2 = newAccount.clone();
         System.out.println("newAccount: " + bankAccountJsonSerializer.toJson(newAccount));
         System.out.println("newAccount2: " + bankAccountJsonSerializer.toJson(newAccount2));
+
+        BankAccount account = BankDirector.accountBuilder()
+                .accountId(1L)
+                .balance(1000)
+                .currency("USD")
+                .type(AccountType.CURRENT_ACCOUNT)
+                .status(AccountStatus.SUSPENDED)
+                .build();
+
+        account.setCustomer(new Customer(1L, "douhi"));
+
+        BankAccount cloned = account.clone();
+        System.out.println("account: " + account);
+        System.out.println("cloned: " + cloned);
+
+        account.getCustomer().setName("douhi2");
+        System.out.println("account: " + account);
+        System.out.println("cloned: " + cloned);
+
 
     }
 }
